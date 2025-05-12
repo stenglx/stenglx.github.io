@@ -1,4 +1,4 @@
 # _config.yml
 title: My Jekyll Site
 description: A simple static site powered by Jekyll
-theme: minima   # Default Jekyll theme (optional)
+theme: jekyll-theme-hacker   # Default Jekyll theme (optional)
