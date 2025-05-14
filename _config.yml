@@ -1,3 +1,4 @@
 title: Dipl.-Ing. Katharina Stengg 
 description: PhD student and project assistant at SERG/AAU
-theme: jekyll-theme-hacker 
+theme: minimal-mistakes-jekyll
+skin: "pink" # Or create your own below
