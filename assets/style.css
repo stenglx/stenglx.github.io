@@ -41,5 +41,15 @@ body {
   .main-content {
     flex-grow: 1;
     padding: 2rem;
+    max-width: 800px; /* Add a max width for better control */
+  }
+  
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
   
