@@ -1,0 +1,28 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul {
+    background: #ff66b3;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
