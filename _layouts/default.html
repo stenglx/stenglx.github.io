@@ -1,30 +1,45 @@
-<!-- from gpt -->
+<!-- vibe coded-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/publications.html">Publications</a></li>
-        <li><a href="/teaching.html">Teaching</a></li>
-        <li><a href="/cv.html">Curriculum Vitae</a></li>
-        <li><a href="/random_stuff.html">Random facts</a></li>
+  <div class="layout">
+    <aside class="profile-card">
+      <img src="/assets/profile.jpg" alt="Profile photo" class="avatar">
+      <h1>Your Name</h1>
+      <p>PhD Student @ University<br>Supervisor: Dr. Someone</p>
+      <ul class="contact-info">
+        <li><strong>Email:</strong> your.email@example.com</li>
+        <li><strong>Phone:</strong> +123 456 7890</li>
+        <li><strong>Location:</strong> Your City, Country</li>
       </ul>
-    </nav>
-  </header>
+    </aside>
 
-  <main>
-    {{ content }}
-  </main>
+    <div class="main-content">
+      <header class="top-nav">
+        <nav>
+          <ul>
+            <li><a href="/">About</a></li>
+            <li><a href="/cv.html">Resume</a></li>
+            <li><a href="/publications.html">Publications</a></li>
+            <li><a href="/teaching.html">Courses</a></li>
+            <li><a href="/random_stuff.html">Fun</a></li>
+          </ul>
+        </nav>
+      </header>
 
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} Your Name</p>
-  </footer>
+      <main>
+        {{ content }}
+      </main>
+
+      <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} Your Name</p>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
