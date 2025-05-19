@@ -8,31 +8,10 @@
 </head>
 <body>
   <div class="layout">
-    <aside class="profile-card">
-      <img src="images/Kathi_small.jpg" alt="Profile photo" class="avatar">
-      <h1>Katharina Stengg</h1>
-      <p>PhD Student @ <a href="https://www.aau.at/en">University of Klagenfurt</a>
-        <br>Supervisor: <a href="https://pinzger.github.io">Prof. Dr. Martin Pinzger</a>
-      </p>
-      <ul class="contact-info">
-        <li><strong>Email:</strong> katharina.stengg@aau.at</li>
-        <!--<li><strong>Phone:</strong> +123 456 7890</li>-->
-        <li><strong>Location:</strong> Klagenfurt, Austria</li>
-      </ul>
-    </aside>
+    <div id="profile"></div>
 
     <div class="main-content">
-      <header class="top-nav">
-        <nav>
-          <ul>
-            <li><a href="/">About</a></li>
-            <li><a href="/cv.html">CV</a></li>
-            <li><a href="/publications.html">Publications</a></li>
-            <li><a href="/teaching.html">Teaching</a></li>
-            <li><a href="/random_stuff.html">Fun</a></li>
-          </ul>
-        </nav>
-      </header>
+      <div id="header"></div>
 
       <main>
         <h1>Hi, I am Kathi!</h1>
@@ -41,9 +20,9 @@
             My research focusses on build systems, change impact analysis, machine learning, and empirical studies in software engineering.</p>
       </main>
 
-      <footer>
-        <p>&copy; <span id="year"></span> Katharina Stengg</p>
-    </footer>
+      <div id="footer"></div>
+      <script src="main.js"></script>
+
     </div>
   </div>
 </body>
