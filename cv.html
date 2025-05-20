@@ -1,0 +1,112 @@
+<!-- vibe coded-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Katharina</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<style>
+     /* Timeline container */
+.education .timeline, .work .timeline {
+  border-left: 3px solid #e0e0e0;
+  padding-left: 20px;
+  margin-left: 10px;
+  position: relative;
+}
+
+/* Timeline entry */
+.education .entry, .work .entry {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Dot before each entry */
+.education .entry::before, .work .entry::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  /*background-color: #C75C6F; /*color from header */
+  border-radius: 50%;
+}
+
+/* Title and duration styling */
+.education .title, .work .title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.education .duration, .work .duration  {
+  font-size: 14px;
+  color: #C75C6F;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Description */
+.education .description, .work .description {
+  font-size: 15px;
+  color: #444;
+}
+  </style>
+  
+<body>
+  <div class="layout">
+    <div id="profile"></div>
+
+    <div class="main-content">
+      <div id="header"></div>
+
+      <main>
+        <div class="education">
+          <h1>Education</h1>
+            <div class="timeline">
+                <div class="entry">
+                    <div class="title">Doctoral programme Informatics <a href="https://www.aau.at/doktorat/doktoratsprogramme/informatics/" style="color: black;">(AAU)</a></div>
+                    <div class="duration">2025 - present</div>
+                    <div class="description">TODO</div>
+                </div>
+                <div class="entry">
+                    <div class="title">Master Informatics <a href="https://www.aau.at/en/studien/master-informatics/" style="color: black;">(AAU)</a></div>
+                    <div class="duration">2022-2025</div>
+                    <div class="description">TODO</div>
+                </div>
+                <div class="entry">
+                    <div class="title">BSc Informatik <a href="https://www.tugraz.at/studium/studienangebot/bachelorstudien/informatik" style="color: black;">(TU Graz)</a></div>
+                    <div class="duration">2019-2022</div>
+                    <div class="description">TODO</div>
+                </div>
+            </div>
+        </div>
+        <div class="work">
+          <h1>Work Experience</h1>
+            <div class="timeline">
+                <div class="entry">
+                    <div class="title">xxx</div>
+                    <div class="duration">xxx - present</div>
+                    <div class="description">TODO</div>
+                </div>
+                <div class="entry">
+                    <div class="title">xxx</div>
+                    <div class="duration">xxx-xxx</div>
+                    <div class="description">TODO</div>
+                </div>
+                <div class="entry">
+                    <div class="title">xx xx </div>
+                    <div class="duration">xxx-xxx</div>
+                    <div class="description">TODO</div>
+                </div>
+            </div>
+        </div>
+      </main>
+
+      <div id="footer"></div>
+      <script src="main.js"></script>
+
+    </div>
+  </div>
+</body>
+</html>
