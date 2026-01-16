@@ -1,6 +1,58 @@
 <!-- vibe coded-->
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .pdf-btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background: #ffe8ef;
+        color: #C75C6F;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .pdf-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: #C75C6F;
+        font-weight: 700;
+        position: relative;
+    }
+
+    h1::after {
+        content: "";
+        display: block;
+        width: 48px;
+        height: 4px;
+        margin-top: 6px;
+        border-radius: 4px;
+        background: #ffe8ef;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.25rem;
+        color: #333;
+    }
+
+    h3 {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: #777;
+        margin-bottom: 0.75rem;
+    }
+
+</style>
 <head>
   <meta charset="UTF-8" />
   <title>Katharina</title>
@@ -14,9 +66,32 @@
       <div id="header"></div>
 
       <main>
-        add pr stuff 
-        <a href="https://www.tugraz.at/fakultaeten/csbme/studies/funds-grants/deans-list/deans-list-2020">Dean's list 2020</a>
-        <img src="images/pr/image_deans_list_2020.JPG" alt="Dean's list 2020" class="avatar">
+          <h1>Dean's List 2020</h1>
+          <h3>I was chosen as representative of top 5% of the first year CS
+          students to join the ceremony and dinner at Landhauskeller</h3>
+
+          <a href="https://www.tugraz.at/fakultaeten/csbme/studies/funds-grants/deans-list/deans-list-2020"
+          class="pdf-btn">
+              Read the article
+          </a>
+          <!--<img src="images/pr/image_deans_list_2020.JPG" alt="Dean's list 2020" class="avatar">-->
+
+          <h1>Huawei Best Performer Awards 2022/23</h1>
+          <h3>The top 4 students of the Master Informatics were awarded
+          by the university and Huawei with a certificate and 2000eur. </h3>
+
+            <a href="https://www.aau.at/blog/huawei-best-performer-awards-technology-scholarship-auszeichnungen-und-stipendien-an-herausragende-technik-studierende-vergeben/"
+               class="pdf-btn">
+               Read the article
+            </a>
+
+          <h1>Master Student Interview</h1>
+          <h3>The university's PR team interviewed me. :D</h3>
+
+          <a href="https://www.aau.at/blog/embedding-exception-espresso-am-institut-fuer-informatik-systeme/"
+             class="pdf-btn">
+              Read the article
+          </a>
     </main>
 
       <div id="footer"></div>

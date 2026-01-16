@@ -51,5 +51,39 @@ body {
     text-overflow: ellipsis;
     max-width: 100%;
   }
+
+h1 {
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #C75C6F;
+    font-weight: 700;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 6px;
+    border-radius: 4px;
+    background: #ffe8ef;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+h3 {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 0.75rem;
+}
   
  
