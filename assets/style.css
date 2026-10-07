@@ -1,89 +1,377 @@
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-  }
-  
-  .layout {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .profile-card {
-    width: 280px;
-    background: #ffffff;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    border-radius: 16px;
-    margin: 20px;
-  }
-  
-  .avatar {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-  }
-  
-  .top-nav ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    background: #C75C6F;
-    padding: 1rem;
-    border-radius: 12px;
-  }
-  
-  .top-nav a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    padding: 2rem;
-    max-width: 800px; /* Add a max width for better control */
-  }
-  
-  p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-  }
+:root{--serif:"Fraunces",Georgia,serif;--sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--plum:#420039;--berry:#701B50;--accent:#D99AAF;--mauve:#E3C9D7;--pearl:#F4ECF0;--ink:#1f0a1c;--muted:#5c4757;--pink:var(--berry);--rose:var(--pearl);--line:#E3C9D7;--paper:#FFFFFF;--lavender:var(--mauve)}
 
-h1 {
-    font-size: 1.6rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    color: #C75C6F;
-    font-weight: 700;
-    position: relative;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--pink);text-underline-offset:4px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:3px solid var(--pink);outline-offset:5px;border-radius:4px}
+::selection{background:#E3C9D7}
+.layout{max-width:1240px;margin:auto;display:grid;grid-template-columns:280px minmax(0,1fr);gap:64px;padding:48px 40px}
+.main-content{min-width:0}
+.profile-card{position:sticky;top:32px;padding:24px;background:linear-gradient(155deg,#F4ECF0,#E3C9D7);border:1px solid var(--line);border-radius:18px;text-align:center;box-shadow:0 6px 24px #42003910}
+.portrait-wrap{position:relative;width:190px;max-width:100%;margin:auto}
+.avatar{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+.profile-name{font:500 30px/1.15 var(--serif);letter-spacing:-.5px;margin:24px 0 16px}
+.profile-role{font-size:14px;line-height:1.6;font-weight:600}
+.affiliation{font-size:12px;color:var(--muted);margin:18px 0}
+.affiliation a{text-decoration:none}
+.profile-location{font-size:12px;margin:20px 0}
+.profile-location span{color:var(--pink);font-size:20px;vertical-align:middle}
+.profile-contact{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;border:1px solid #D99AAF;border-radius:10px;background:transparent;color:var(--ink);text-decoration:none;font-size:13px}
+.supervisor{font-size:11px;color:var(--muted);margin:20px 0 0}
+.supervisor a{color:inherit}
+.top-nav{border-bottom:1px solid var(--line);padding:4px 0 20px}
+.top-nav ul{display:flex;flex-wrap:wrap;align-items:center;gap:6px;list-style:none;padding:0;margin:0}
+.top-nav a{display:block;padding:8px 10px;font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;border-radius:10px;transition:background .2s}
+.top-nav a:hover,.top-nav a[aria-current=page]{background:var(--rose);color:var(--pink)}
+.top-nav a[aria-current=page]{box-shadow:inset 0 -2px 0 var(--pink)}
+main{padding-top:48px;min-height:65vh}
+h1,h2,h3,p{overflow-wrap:break-word}
+h1,h2,.title,.profile-name{color:var(--plum)}
+h1{font:500 clamp(38px,4.5vw,62px)/1.1 var(--serif);letter-spacing:-1px;margin:0 0 32px}
+h2{font:500 30px/1.25 var(--serif);letter-spacing:-.3px;margin:36px 0 16px}
+h3{font-size:16px;font-weight:500;line-height:1.55;color:var(--muted)}
+p{margin:0 0 18px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:700;color:var(--pink);margin:0 0 20px}
+.hero{position:relative;padding:14px 0 48px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(42px,4.5vw,60px);margin-bottom:28px}
+.hero p:not(.eyebrow){max-width:620px;font-size:18px;line-height:1.75;color:var(--muted)}
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+.pdf-btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:12px 20px;margin:4px 0;border:1px solid #D99AAF;border-radius:10px;background:var(--rose);color:#420039;text-decoration:none;font-size:12px;font-weight:600;line-height:1.5;transition:transform .2s,background .2s}
+.pdf-btn:hover{transform:translateY(-1px);background:#E3C9D7}
+.pdf-btn.primary:hover{background:#420039;border-color:#420039}
+.pdf-btn.primary{background:var(--pink);color:white;border-color:var(--pink)}
+.text-link{font-size:13px;font-weight:600}
+.research-section{padding:36px 0}
+.research-section h2{margin-top:0}
+.inner-page .page-heading + .research-section{padding-top:0}
+.page-intro{max-width:680px}
+.feature{background:#F4ECF0;border:1px solid #E3C9D7;border-radius:20px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin:16px 0 36px}
+.feature h2{margin:0 0 12px}
+.feature .eyebrow{margin-bottom:12px}
+.feature p{font-size:14px;margin-bottom:0}
+.feature .pdf-btn{flex-shrink:0}
+.about-note p,.page-intro{color:var(--muted)}
+.about-note{padding:4px 0 20px;border-top:1px solid var(--line)}
+.press-entry{padding:28px 0;border-bottom:1px solid var(--line)}
+.press-entry h2{margin:0 0 14px;font-size:28px}
+.press-entry p{color:var(--muted);max-width:680px}
+.article-meta{font-size:12px}
+.timeline{border-left:1px solid #D99AAF;padding-left:28px;margin:26px 0 42px 8px}
+.entry{position:relative;margin-bottom:30px;padding:20px 24px;background:white;border:1px solid var(--line);border-radius:12px}
+.entry:before{content:'';position:absolute;left:-34px;top:28px;width:10px;height:10px;background:var(--pink);border:2px solid var(--paper);border-radius:50%}
+.title{font-weight:600}
+.duration{font-size:12px;color:var(--pink);margin:8px 0}
+.description{color:var(--muted);font-size:14px}
+.entry .pdf-btn{margin:12px 8px 12px 0}
+.entry p{font-size:14px;margin-top:12px}
+.page-teaching main li{padding:4px 0}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:28px 0 8px;margin-top:50px;font-size:12px;color:var(--muted)}
+footer p{margin:0}
+.skip-link{position:fixed;top:-100px;left:16px;z-index:10;padding:12px;background:white}
+.skip-link:focus{top:16px}
+
+
+.wordmark{display:block;font:italic 36px var(--serif);text-decoration:none;margin-bottom:20px}
+.wordmark span{font-size:22px;margin-left:4px}
+.hero h1 em{font-weight:400;color:var(--pink)}
+.sparkle{display:inline-block;color:var(--pink);font-size:.55em;vertical-align:top;margin-left:12px;transform:rotate(12deg)}
+.hero .hero-intro{font-size:21px;color:var(--ink)!important}
+.interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.interest-grid article{padding:26px;background:var(--rose);border-radius:18px}
+.interest-grid article:nth-child(2){background:var(--lavender)}
+.card-number{font:italic 20px var(--serif);color:var(--pink)}
+.interest-grid h3{font:25px var(--serif);color:var(--ink);margin:20px 0 12px}
+.interest-grid p{font-size:14px;color:var(--muted)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:10px;padding:4px 9px;background:#ffffff8c;border-radius:20px}
+footer span span{color:var(--pink)}
+
+@media(min-width:1500px){.layout{padding-top:48px}
 }
 
-h1::after {
-    content: "";
-    display: block;
-    width: 48px;
-    height: 4px;
-    margin-top: 6px;
-    border-radius: 4px;
-    background: #ffe8ef;
+@media(max-width:1100px){.layout{gap:32px;padding:24px;grid-template-columns:230px minmax(0,1fr)}
+.profile-card{padding:18px}
+.top-nav a{padding:8px;font-size:11px}
+.feature{flex-direction:column;align-items:flex-start}
+.hero h1{font-size:54px}
 }
 
-h2 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.25rem;
-    color: #333;
+@media(max-width:760px){.layout{display:flex;flex-direction:column;padding:20px;gap:24px}
+.profile-card{position:static;border-radius:18px;text-align:left;display:grid;grid-template-columns:90px minmax(0,1fr);column-gap:20px;padding:20px}
+.wordmark,.affiliation,.profile-location,.supervisor{display:none}
+.interest-grid{grid-template-columns:1fr}
+.portrait-wrap{grid-column:1;grid-row:1/4;width:90px}
+.profile-name{grid-column:2;font-size:26px;margin:0 0 8px}
+.profile-name br{display:none}
+.profile-role{grid-column:2;font-size:12px;margin:0}
+.profile-role br{display:none}
+.profile-contact{grid-column:2;border:0;background:none;color:var(--pink);padding:8px 0 0;justify-content:flex-start;gap:12px}
+.top-nav{padding:0 0 16px}
+.top-nav ul{gap:4px}
+.top-nav a{font-size:12px;padding:8px 10px}
+main{padding-top:32px}
+.hero h1{font-size:clamp(42px,9vw,64px)}
+h1{font-size:42px}
+.hero{padding-top:0}
+.feature{padding:24px}
+.entry{padding:18px}
+.eyebrow{letter-spacing:1.4px}
+footer{margin-top:32px}
+.page-teaching h2{font-size:26px}
 }
 
-h3 {
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: #777;
-    margin-bottom: 0.75rem;
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+*,*:before,*:after{transition:none!important}
+.pdf-btn:hover{transform:none}
 }
-  
- 
+
+/* Interior pages share a quiet editorial layout. */
+.page-heading{padding:14px 0 28px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.page-heading h1{margin:0}
+.page-heading .eyebrow{margin-bottom:16px}
+.inner-page .section-label{font:600 12px/1.5 var(--sans);letter-spacing:1px;text-transform:uppercase;color:var(--pink);margin:36px 0 18px}
+.content-section{margin-top:32px}
+.content-entry{padding:28px 0;border-bottom:1px solid var(--line)}
+.content-entry:last-child{border-bottom:0}
+.content-entry h2,.content-entry h3:not(.topics-label){font:28px/1.3 var(--serif);letter-spacing:-.5px;color:var(--ink);margin:0 0 14px}
+.content-entry p{max-width:680px;color:var(--muted)}
+.content-entry .entry-meta,.content-entry .article-meta{font-size:13px;color:var(--muted);margin:12px 0 18px}
+.content-section .content-entry{padding:24px;border:1px solid var(--line);border-radius:12px;background:#F4ECF0}
+.content-section:nth-of-type(even) .content-entry{background:#FFFFFF}
+.course-entry{margin-bottom:24px;padding:28px;border:1px solid var(--line);border-radius:12px;background:#F4ECF0}
+.course-entry:last-child{border-bottom:1px solid var(--line);background:#FFFFFF}
+.course-entry .topics-label{font:600 13px/1.5 var(--sans);color:var(--ink);margin:24px 0 8px}
+.course-entry ul{padding-left:20px;margin:8px 0;color:var(--muted);font-size:14px}
+.course-entry li{padding:3px 0}
+.inner-page .timeline{margin-top:20px}
+.inner-page .entry{padding:22px 24px;background:#F4ECF0}
+.inner-page .work .entry{background:#FFFFFF}
+.inner-page .title{font:23px/1.35 var(--serif);color:var(--ink);margin:0 0 8px}
+.inner-page .title a{font:14px var(--sans);white-space:nowrap}
+.inner-page .entry .pdf-btn{font-size:11px;padding:9px 14px}
+.hobby-entry{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px;background:#FFFFFF;border:1px solid var(--line);border-radius:12px}
+.hobby-entry:last-child{border-bottom:1px solid var(--line)}
+.hobby-entry .pdf-btn{flex-shrink:0}
+.hobby-entry p:last-child{margin-bottom:0}
+@media(max-width:760px){
+ .page-heading{padding-top:0;margin-bottom:24px}
+ .content-entry h2,.content-entry h3:not(.topics-label){font-size:25px}
+ .course-entry,.content-section .content-entry,.hobby-entry{padding:22px}
+ .hobby-entry{flex-direction:column;align-items:flex-start}
+ .inner-page .entry{padding:18px}
+ .inner-page .title{font-size:21px}
+}
+
+/* Homepage updates, newest first. */
+.news-section{padding:36px 0}
+.news-section>h2{margin:0 0 26px}
+.news-entry{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:24px 0;margin:0;border-top:1px solid var(--line)}
+
+.news-entry:last-child{margin-bottom:0}
+.news-entry time{font-size:12px;white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:4px}
+.news-entry h3{font:600 18px/1.45 var(--sans);color:var(--ink);margin:0 0 10px}
+.news-entry p{font-size:15px;color:var(--muted);margin:0 0 12px}
+@media(max-width:760px){.news-entry{grid-template-columns:1fr;gap:10px}.news-entry time{padding-top:0}}
+
+/* Pastel CV cards with a consistent content hierarchy. */
+.page-cv .timeline{border:0;padding:0;margin:20px 0 36px;display:grid;gap:16px}
+.page-cv .entry{margin:0;padding:24px 28px;background:#F4ECF0;border:1px solid var(--line);border-radius:12px}
+.page-cv .work .entry{background:#FFFFFF}
+.page-cv .entry::before{display:none}
+.page-cv .title{font:23px/1.3 var(--serif);margin:0 0 8px}
+.page-cv .cv-institution{font-size:14px;margin:0 0 6px}
+.page-cv .cv-institution a{color:var(--muted);text-decoration:none}
+.page-cv .cv-institution a:hover{text-decoration:underline}
+.page-cv .duration{font-size:12px;color:var(--pink);margin:0 0 14px}
+.page-cv .description,.page-cv .cv-entry-body>p:not(.cv-institution){font-size:14px;line-height:1.65;color:var(--muted);margin:12px 0}
+.page-cv .cv-link{display:inline-block;font-size:12px;margin:4px 0}
+.page-cv .section-label{margin:32px 0 0}
+.page-cv .cv-related{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px}
+.page-cv .cv-related summary{cursor:pointer;color:var(--pink);width:fit-content}
+.page-cv .cv-related summary:focus-visible{outline:3px solid var(--pink);outline-offset:4px}
+.page-cv .cv-links{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding-top:12px}
+.page-cv .cv-links a{font-size:12px}
+@media(max-width:760px){.page-cv .entry{padding:22px}.page-cv .title{font-size:22px}}
+
+/* Compact heading scale for interior pages; the homepage keeps its hero scale. */
+.inner-page .page-heading h1{font-size:clamp(30px,3vw,38px);line-height:1.2;letter-spacing:-.8px}
+.inner-page h2:not(.section-label),.inner-page .content-entry h3:not(.topics-label){font-size:22px;line-height:1.4;letter-spacing:-.3px}
+.inner-page .entry .title{font-size:20px;line-height:1.4;letter-spacing:-.2px}
+
+/* Keep the academic profile prominent on every page, including mobile. */
+.profile-scholar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 18px;margin-bottom:10px;background:var(--pink);border:1px solid var(--pink);border-radius:10px;color:white;text-decoration:none;font-size:13px;font-weight:600}
+.profile-scholar:hover{background:#420039}
+@media(max-width:760px){.profile-scholar{grid-column:1/-1;margin:16px 0 0}.profile-contact{grid-row:3}}
+
+/* Photorealistic glitter texture with a moving light reflection. */
+.profile-card{isolation:isolate;overflow:hidden}
+.profile-card::before,.profile-card::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none}
+.profile-card::before{background:url('../images/rose-glitter.jpg') center/420px;animation:glitter-reflection 4s ease-in-out infinite alternate}
+.profile-card::after{inset:10px;border-radius:10px;background:linear-gradient(155deg,#F4ECF0f5,#E3C9D7f5)}
+@keyframes glitter-reflection{0%{filter:brightness(.85)}50%{filter:brightness(1.25)}100%{filter:brightness(1)}}
+@media(max-width:760px){.profile-card{position:relative;top:0}}
+@media(prefers-reduced-motion:reduce){.profile-card::before{animation:none}}
+
+/* Research page: publications with venue and status badges. */
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.research-lead .page-intro{font-size:18px;line-height:1.7;max-width:640px;margin-bottom:8px}
+.research-grid article{background:var(--pearl);border:1px solid var(--line)}
+.research-grid article:nth-child(2),.research-grid article:nth-child(3){background:#fff}
+.research-grid h3{font-size:21px;color:var(--plum);margin:10px 0}
+.research-grid .card-number{margin:0;color:var(--accent)}
+.pub-section{padding:20px 0 12px}
+.pub-header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--plum);padding-bottom:12px;margin-bottom:8px}
+.pub-header h2{margin:0}
+.pub-list{list-style:none;padding:0;margin:0}
+.pub{padding:24px 0 22px;border-bottom:1px solid var(--line)}
+.pub-venue{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:12px;color:var(--muted);margin:0 0 10px}
+.badge{display:inline-block;padding:3px 10px;background:var(--plum);color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;border-radius:4px}
+.badge-status{background:var(--accent);color:var(--plum)}
+.inner-page .pub-title{font:22px/1.35 var(--serif);color:var(--plum);letter-spacing:-.3px;margin:0 0 8px}
+.pub-authors{font-size:14px;color:var(--muted);margin:0 0 10px}
+.pub-authors strong{color:var(--berry)}
+.pub-abstract{font-size:14px;color:var(--muted);max-width:680px;margin:0 0 12px}
+.pub-links{margin:0}
+.pub-links .pdf-btn{font-size:11px;padding:8px 14px}
+.pub-tag{font-size:12px;color:var(--berry)}
+.project-entry{margin-top:28px;padding:24px 28px!important;background:var(--pearl);border:1px solid var(--line)!important;border-left:4px solid var(--berry)!important;border-radius:12px}
+.project-entry .eyebrow{margin-bottom:8px}
+.project-entry h2{margin-top:0}
+@media(max-width:760px){.inner-page .pub-title{font-size:20px}.project-entry{padding:20px!important}}
+.badge-light{background:var(--mauve);color:var(--plum)}
+
+/* Footer links and 404 page. */
+.footer-links a{color:var(--muted);text-decoration:none}
+.footer-links a:hover{color:var(--berry);text-decoration:underline}
+.notfound{padding:40px 0}
+
+/* Typography: Fraunces for headings, DM Sans for text (self-hostable via Bunny Fonts, GDPR-friendly). */
+body{font-family:var(--sans);font-size:16.5px;font-feature-settings:"ss01"}
+h1,h2,.title,.pub-title,.profile-name,.interest-grid h3,.content-entry h2{font-variation-settings:"SOFT" 50,"WONK" 0;font-optical-sizing:auto}
+.hero h1{letter-spacing:-1.2px}
+.top-nav a{font-weight:500;letter-spacing:.1px}
+.pdf-btn,.profile-scholar,.profile-contact,.text-link{font-family:var(--sans)}
+.badge{font-family:var(--sans);letter-spacing:.3px}
+
+/* Homepage: selected publications teaser. */
+.home-pubs{padding:36px 0 8px;border-bottom:1px solid var(--line)}
+.home-pubs .pub-header{border-bottom-width:1px}
+.home-pubs .pub{padding:18px 0}
+.home-pubs .pub:last-child{border-bottom:0}
+.home-pubs .inner-title{font:500 20px/1.35 var(--serif);color:var(--plum);margin:0 0 6px}
+.home-pubs .inner-title a{color:inherit;text-decoration:none}.home-pubs .inner-title a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.pub-header .text-link{white-space:nowrap}@media (max-width:600px){.pub-header h2{font-size:26px}}
+
+/* Wider layout and home page "at a glance" panel. */
+.layout{max-width:1440px;grid-template-columns:300px minmax(0,1fr);gap:72px;padding:48px 48px}
+.glance{background:var(--pearl);border:1px solid var(--line);border-radius:16px;padding:24px 26px;align-self:start}
+.glance .eyebrow{margin-bottom:12px}
+.glance dl{margin:0;display:grid;gap:0}
+.glance dl div{padding:12px 0;border-top:1px solid var(--line)}
+.glance dl div:first-child{border-top:0;padding-top:4px}
+.glance dt{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.glance dd{margin:0;font-size:15px;line-height:1.5;color:var(--ink)}
+.glance a{color:var(--berry);text-decoration-color:var(--accent)}
+.hero .glance{margin-top:8px}
+@media(min-width:1200px){
+ .hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center}
+ .hero p:not(.eyebrow){max-width:640px}
+ .home-pubs .pub-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-top:20px}
+ .home-pubs .pub{padding:22px 22px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column}
+ .home-pubs .pub:last-child{border-bottom:1px solid var(--line)}
+ .home-pubs .pub:hover{border-color:var(--accent);box-shadow:0 8px 24px #42003914;transform:translateY(-2px)}
+ .home-pubs .pub-venue{margin-bottom:14px}
+ .home-pubs .inner-title{font-size:19px;margin-bottom:12px}
+ .home-pubs .pub-authors{margin-top:auto;font-size:14px}
+ .home-pubs{padding-bottom:40px}
+ .news-section .news-entry{grid-template-columns:160px minmax(0,1fr)}
+}
+@media(max-width:1199px){.hero .glance{margin-top:36px;max-width:640px}}
+@media(max-width:1100px){.layout{grid-template-columns:240px minmax(0,1fr);gap:36px;padding:24px}}
+@media(max-width:760px){.layout{padding:20px}}
+@media(min-width:1101px){.portrait-wrap{width:220px}}
+@media(min-width:1200px){.page-cv .timeline{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}}
+
+/* Modern page headings. */
+main{padding-top:40px}
+.hero-text .eyebrow,.page-heading .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:var(--pearl);border:1px solid var(--line);letter-spacing:1.6px;line-height:1.4}
+.hero-text .eyebrow::before,.page-heading .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+.page-heading{padding:8px 0 0;border-bottom:0;margin-bottom:40px}
+.page-heading .eyebrow{margin-bottom:18px}
+.inner-page .page-heading h1{font-size:clamp(36px,4vw,52px);line-height:1.1;letter-spacing:-1px}
+.page-heading::after{content:"";display:block;width:64px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--berry),var(--accent));margin-top:24px}
+@media(max-width:760px){
+ main{padding-top:28px}
+ .page-heading{margin-bottom:28px}
+}
+
+/* Menu bar: classic tabs, larger text. */
+.top-nav{padding:4px 0 18px;border-bottom:1px solid var(--line)}
+.top-nav ul{gap:4px}
+.top-nav a{padding:10px 14px;font-size:15.5px;font-weight:500;letter-spacing:0;color:var(--muted);border-radius:10px}
+.top-nav a:hover,.top-nav a[aria-current=page]{background:var(--rose);color:var(--plum)}
+.top-nav a[aria-current=page]{font-weight:600;box-shadow:inset 0 -2px 0 var(--berry)}
+@media(max-width:1100px){.top-nav a{font-size:14.5px;padding:9px 12px}}
+@media(max-width:760px){.top-nav{padding:0 0 14px}.top-nav a{font-size:14px;padding:8px 10px}}
+
+/* Soft pearl full-height sidebar (replaces the glitter card). */
+.profile-card::before,.profile-card::after{display:none}
+.profile-card{box-shadow:none}
+@media(min-width:761px){
+ .layout{max-width:none;margin:0;padding:0;grid-template-columns:340px minmax(0,1fr);gap:0}
+ #profile{position:sticky;top:0;height:100vh;overflow:auto;background:linear-gradient(180deg,#F4ECF0 0%,#E3C9D7 100%);border-right:1px solid #E3C9D7}
+ .profile-card{position:static;min-height:100%;background:none;border:0;border-radius:0;padding:44px 34px;display:flex;flex-direction:column;justify-content:center}
+ .portrait-wrap{width:auto;max-width:none;margin:0 -14px}
+ .main-content{padding:40px 64px 48px;max-width:1120px}
+}
+@media(min-width:761px) and (max-width:1100px){
+ .layout{grid-template-columns:270px minmax(0,1fr)}
+ .profile-card{padding:32px 24px}
+ .portrait-wrap{width:auto;max-width:none;margin:0 -8px}
+ .main-content{padding:32px 36px}
+}
+
+/* Home page "Latest news" box. */
+.glance-more{display:inline-block;margin-top:14px;font-size:14px}
+#news-title{scroll-margin-top:24px}
+
+/* Keep the menu line at the same height on every page, also while the menu loads. */
+#header{min-height:69px}
+@media(max-width:1100px){#header{min-height:65px}}
+@media(max-width:760px){#header{min-height:97px}}
+
+/* Link pill next to a page eyebrow (Research page: Google Scholar). */
+.eyebrow-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:18px}
+.page-heading .eyebrow-row .eyebrow{margin:0}
+.page-heading .eyebrow-link{background:#fff;color:var(--berry);text-decoration:none;transition:background .15s,border-color .15s}
+.page-heading .eyebrow-link::before{display:none}
+.page-heading .eyebrow-link:hover{background:var(--rose);border-color:var(--accent);color:var(--plum)}
+
+/* Sidebar: no visible scrollbar; tighter spacing on short screens so it fits. */
+#profile{scrollbar-width:none}
+#profile::-webkit-scrollbar{display:none}
+@media(min-width:761px) and (max-height:920px){
+ .profile-card{padding-top:24px;padding-bottom:24px}
+ .profile-name{margin:14px 0 10px}
+ .profile-card .affiliation,.profile-card .profile-location{margin-top:10px;margin-bottom:10px}
+ .profile-card .supervisor{margin-top:12px}
+}
+@media(min-width:761px) and (max-height:800px){
+ .portrait-wrap{width:auto;max-width:none;margin:0 6px}
+}
+
+/* Larger button and link text. */
+.pdf-btn{font-size:15px;padding:13px 22px;gap:14px}
+.inner-page .entry .pdf-btn,.pub-links .pdf-btn{font-size:14px;padding:10px 16px}
+.text-link{font-size:15px}
+.profile-scholar,.profile-contact{font-size:15px}
+.glance-more{font-size:15px}
+@media(max-width:760px){.pdf-btn{font-size:14.5px;padding:12px 18px}}
+
+/* Picture is cropped to the drawing (no background hearts), so show it at its own shape. */
+.avatar{aspect-ratio:480/495;object-fit:contain}
+/* Sidebar details were hard to read: affiliation, location and supervisor a bit larger. */
+.affiliation,.profile-location{font-size:14px}
+.supervisor{font-size:13px}

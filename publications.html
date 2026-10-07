@@ -1,97 +1,111 @@
-<!-- vibe coded-->
 <!DOCTYPE html>
 <html lang="en">
 
-<style>
-    .pdf-btn {
-        display: inline-block;
-        padding: 10px 16px;
-        border-radius: 12px;
-        background: #ffe8ef;
-        color: #C75C6F;
-        font-weight: 600;
-        text-decoration: none;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .pdf-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-    }
 
-    h1 {
-        font-size: 1.6rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        color: #C75C6F;
-        font-weight: 700;
-        position: relative;
-    }
-
-    h1::after {
-        content: "";
-        display: block;
-        width: 48px;
-        height: 4px;
-        margin-top: 6px;
-        border-radius: 4px;
-        background: #ffe8ef;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        margin-bottom: 0.25rem;
-        color: #333;
-    }
-
-    h3 {
-        font-size: 0.95rem;
-        font-weight: 400;
-        color: #777;
-        margin-bottom: 0.75rem;
-    }
-
-</style>
 <head>
     <meta charset="UTF-8" />
-    <title>Katharina</title>
-    <link rel="stylesheet" href="assets/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research | Katharina Stengg</title>
+    <meta name="description" content="Research and publications of Katharina Stengg: code review, change impact analysis, LLMs for software engineering and empirical software engineering." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Research | Katharina Stengg" />
+    <meta property="og:description" content="Research and publications of Katharina Stengg: code review, change impact analysis, LLMs for software engineering and empirical software engineering." />
+    <meta property="og:url" content="https://stenglx.github.io/publications.html" />
+    <meta property="og:image" content="https://stenglx.github.io/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#420039" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=dm-sans:400,500,700|fraunces:400,500,600,400i&display=swap" />
+  <link rel="stylesheet" href="/assets/style.css?v=20261007-text"/>
 </head>
-<body>
+<body class="page-publications">
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="layout">
     <div id="profile"></div>
 
     <div class="main-content">
         <div id="header"></div>
 
-        <main>
-            <a href="https://scholar.google.com/citations?user=VSrqhl4AAAAJ&hl=de"
-               class="pdf-btn">
-               My Google Scholar
-            </a>
-            <h1>Peer-reviewed publications</h1>
-            <h2>Agent-based Dependency-related Build Repair</h2>
-            <h3>Christian Macho, Katharina Stengg, Martin Pinzger</h3>
-            <a href="https://conf.researchr.org/details/saner-2026/saner-2026-early-research-achievement-era--track/13/Agent-based-Dependency-related-Build-Repair"
-               class="pdf-btn">
-                Read the paper
-            </a>
+        <main id="main" class="inner-page"><header class="page-heading"><div class="eyebrow-row"><p class="eyebrow">Research</p><a class="eyebrow eyebrow-link" href="https://scholar.google.com/citations?user=VSrqhl4AAAAJ&amp;hl=en">Google Scholar ↗</a></div><h1>What happens when code changes?</h1></header>
+            <section class="research-section research-lead" aria-labelledby="interests-title">
+                <p class="page-intro">My research focuses on specific tasks within code review: understanding what a code change does, which parts of a system it affects, and how tools such as change impact analysis and change classification can support developers in these tasks.</p>
+                <h2 id="interests-title" class="visually-hidden">Research interests</h2>
+                <div class="interest-grid research-grid">
+                    <article><p class="card-number">01</p><h3>Code review</h3><p>The setting my work applies to: supporting specific review tasks, such as understanding a change and spotting the follow-up changes it needs.</p></article>
+                    <article><p class="card-number">02</p><h3>Change impact analysis</h3><p>Finding which code a change affects, and describing what kind of change it is.</p></article>
+                    <article><p class="card-number">03</p><h3>LLMs for software engineering</h3><p>Testing what large language models can really do for code analysis and build failures, with honest datasets and evaluations.</p></article>
+                    <article><p class="card-number">04</p><h3>Empirical software engineering</h3><p>Studying software and developers through data, experiments and user studies.</p></article>
+                </div>
+            </section>
 
+            <section class="pub-section" aria-labelledby="publications-title">
+                <div class="pub-header"><h2 id="publications-title">Publications</h2><a class="text-link" href="https://scholar.google.com/citations?user=VSrqhl4AAAAJ&amp;hl=en">Google Scholar ↗</a></div>
+                <ol class="pub-list">
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge">AgenticDev 2026</span> 1st International Workshop on Agentic AI for Next-Generation Software Development, ASE 2026</p>
+                        <h3 class="pub-title">katIA: Hybrid Source Code Change Impact Analysis (Extended Abstract)</h3>
+                        <p class="pub-authors"><strong>Katharina Stengg</strong>, Christian Macho, Martin Pinzger</p>
+                        <p class="pub-links"><a class="pdf-btn primary" href="https://doi.org/10.1145/3843282.3844420">Read the paper ↗</a></p>
+                    </li>
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge badge-status">Under revision</span> Journal of Systems and Software (JSS)</p>
+                        <h3 class="pub-title">Can Open-Weight LLMs Replace Build Log Analyzers?</h3>
+                        <p class="pub-authors">Christian Macho, <strong>Katharina Stengg</strong></p>
+                        <p class="pub-links"><span class="pub-tag">Preprint on SSRN</span></p>
+                    </li>
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge">SANER 2026</span> IEEE International Conference on Software Analysis, Evolution and Reengineering, ERA track</p>
+                        <h3 class="pub-title">Agent-Based Dependency-Related Build Repair</h3>
+                        <p class="pub-authors">Christian Macho, <strong>Katharina Stengg</strong>, Martin Pinzger</p>
+                        <p class="pub-links"><a class="pdf-btn" href="https://conf.researchr.org/track/saner-2026/saner-2026-papers">Conference programme ↗</a></p>
+                    </li>
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge">arXiv 2025</span> Preprint</p>
+                        <h3 class="pub-title">A Dataset and Preliminary Study of Using GPT-5 for Code-change Impact Analysis</h3>
+                        <p class="pub-authors"><strong>Katharina Stengg</strong>, Christian Macho, Martin Pinzger</p>
+                        <p class="pub-abstract">Can GPT-5 tell which code entities a change impacts? We built a dataset of seed changes and impacted entities and found that today’s models still struggle, and that giving them the diff helps a little.</p>
+                        <p class="pub-links"><a class="pdf-btn primary" href="https://arxiv.org/abs/2512.19481">Read on arXiv ↗</a></p>
+                    </li>
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge badge-light">Master’s thesis 2025</span> University of Klagenfurt</p>
+                        <h3 class="pub-title">Predicting Build Results using Software Metrics and Developer Sentiment</h3>
+                        <p class="pub-authors"><strong>Katharina Stengg</strong></p>
+                    </li>
+                </ol>
+            </section>
 
-            <h1>Other publications</h1>
-            <h2>A Dataset and Preliminary Study of Using GPT-5
-                for Code-change Impact Analysis</h2>
-            <h3>Katharina Stengg, Christian Macho, Martin Pinzger</h3>
-            <a href="https://arxiv.org/pdf/2512.19481"
-               class="pdf-btn">
-                Read the paper
-            </a>
-        </main>
+            <section class="pub-section" id="talks" aria-labelledby="talks-title">
+                <div class="pub-header"><h2 id="talks-title">Talks, posters &amp; events</h2></div>
+                <ol class="pub-list">
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge">Poster</span> ASE 2026 · AgenticDev workshop</p>
+                        <h3 class="pub-title">katIA: Hybrid Source Code Change Impact Analysis</h3>
+                        <p class="pub-links"><a class="text-link" href="https://conf.researchr.org/home/ase-2026/agenticdev-2026">Workshop programme ↗</a></p>
+                    </li>
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge">Guest lecture</span> Winter semester 2026/2027 · University of Klagenfurt</p>
+                        <h3 class="pub-title">Code Review in the Era of AI</h3>
+                        <p class="pub-authors">In <a href="https://mitschi.github.io/">Christian Macho</a>’s course <a href="https://campus.aau.at/studien/lvliste.jsp?atoken=914095040">Advanced Software Engineering</a></p>
+                    </li>
+                    <li class="pub">
+                        <p class="pub-venue"><span class="badge badge-light">Summer school</span> August 2025 · USI Lugano, Switzerland</p>
+                        <h3 class="pub-title">SIESTA 2025, International Software Engineering Summer School</h3>
+                        <p class="pub-links"><a class="text-link" href="https://siesta.si.usi.ch/2025/">SIESTA 2025 ↗</a></p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="content-entry" aria-labelledby="collaboration-title">
+                <h2 id="collaboration-title">Let’s collaborate</h2>
+                <p>I’m always interested in collaborations, especially where software engineering meets other fields: code review, human factors in software development, and biomedical engineering, for example using biometric signals to understand how developers read and review code.</p>
+                <p>Have an idea or want to work together? Email me at <a href="mailto:katharina.stengg@aau.at">katharina.stengg@aau.at</a>.</p>
+            </section>
+            </main>
 
         <div id="footer"></div>
-        <script src="main.js"></script>
+        <script src="main.js?v=20261007-finish"></script>
 
     </div>
 </div>

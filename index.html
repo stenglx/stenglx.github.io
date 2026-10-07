@@ -1,62 +1,64 @@
-<!-- vibe coded-->
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    h1 {
-        font-size: 1.6rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        color: #C75C6F;
-        font-weight: 700;
-        position: relative;
-    }
 
-    h1::after {
-        content: "";
-        display: block;
-        width: 48px;
-        height: 4px;
-        margin-top: 6px;
-        border-radius: 4px;
-        background: #ffe8ef;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        margin-bottom: 0.25rem;
-        color: #333;
-    }
-
-    h3 {
-        font-size: 0.95rem;
-        font-weight: 400;
-        color: #777;
-        margin-bottom: 0.75rem;
-    }
-</style>
 <head>
   <meta charset="UTF-8" />
-  <title>Katharina</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Katharina Stengg</title>
+  <meta name="description" content="Katharina Stengg is a PhD student at the University of Klagenfurt researching code changes and their impact on software systems." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About | Katharina Stengg" />
+    <meta property="og:description" content="Katharina Stengg is a PhD student at the University of Klagenfurt researching code changes and their impact on software systems." />
+    <meta property="og:url" content="https://stenglx.github.io/" />
+    <meta property="og:image" content="https://stenglx.github.io/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#420039" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=dm-sans:400,500,700|fraunces:400,500,600,400i&display=swap" />
+  <link rel="stylesheet" href="/assets/style.css?v=20261007-text" />
 </head>
-<body>
+<body class="page-index">
+<a class="skip-link" href="#main">Skip to content</a>
   <div class="layout">
     <div id="profile"></div>
 
     <div class="main-content">
       <div id="header"></div>
 
-      <main>
-        <h1>Hi, I am Kathi!</h1>
-        <p>I am a project assistant and PhD student in the Software Engineering Group (SERG) at the University of Klagenfurt.
-            I received my MSc with distinction from the University of Klagenfurt in 2025 and my BSc from the TU Graz in 2023. 
-            My research focuses on build systems, change impact analysis, machine learning, and empirical studies in software engineering.</p>
+      <main id="main">
+        <section class="hero">
+          <div class="hero-text">
+          <p class="eyebrow">Software engineering · Klagenfurt, Austria</p>
+          <h1>Hi, I’m Kathi!</h1>
+
+          <p>I’m a university assistant and PhD student in the Software Engineering Research Group (SERG) at the University of Klagenfurt. My research focuses on specific tasks within code review, such as understanding what a code change does and which parts of a system it affects.</p>
+          <div class="actions">
+            <a class="pdf-btn primary" href="publications.html">Research &amp; publications <span aria-hidden="true">→</span></a>
+            <a class="pdf-btn" href="https://scholar.google.com/citations?user=VSrqhl4AAAAJ&amp;hl=en">Google Scholar ↗</a>
+          </div>
+          </div>
+          <aside class="glance news-box" aria-labelledby="glance-title">
+            <p class="eyebrow" id="glance-title">Latest news</p>
+            <!-- Newest first; keep the three latest items. Each item also goes on its own page. -->
+            <dl>
+              <div><dt><time datetime="2026-10-03">October 2026</time></dt><dd><a href="publications.html#talks">Poster at AgenticDev, ASE 2026</a></dd></div>
+              <div><dt><time datetime="2026-09-15">September 2026</time></dt><dd><a href="pr.html">Interview with the University of Klagenfurt</a></dd></div>
+              <div><dt><time datetime="2026-03">March 2026</time></dt><dd><a href="publications.html">Paper at SANER 2026</a></dd></div>
+            </dl>
+          </aside>
+        </section>
+        <section class="about-note" aria-labelledby="connect-title">
+          <h2 id="connect-title">Let’s collaborate</h2>
+          <p>I’m always interested in collaborations, especially where software engineering meets other fields: code review, human factors in software development, and biomedical engineering, for example using biometric signals to understand how developers read and review code.</p>
+          <p>Have an idea or want to work together? Email me at <a href="mailto:katharina.stengg@aau.at">katharina.stengg@aau.at</a>.</p>
+          <p>Outside research, I enjoy triathlon and I’m learning Italian. <a href="hobbies.html">A little more about me</a>.</p>
+        </section>
       </main>
 
       <div id="footer"></div>
-      <script src="main.js"></script>
+      <script src="main.js?v=20261007-finish"></script>
 
     </div>
   </div>
